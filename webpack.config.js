@@ -1,8 +1,12 @@
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     "mode": "development",
-    "entry": "./src/index.js",
+    "entry": [
+        'webpack-hot-middleware/client?reload=true',
+        "./src/index.js"
+    ],
     "output": {
         "path": __dirname + '/public',
         "filename": "bundle.js"
@@ -38,6 +42,7 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: "./src/index.html",
             filename: "./index.html"
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
