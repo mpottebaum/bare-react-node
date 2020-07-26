@@ -8,19 +8,22 @@ const config = require('./webpack.config.js');
 const compiler = webpack(config);
 const port = 3000
 
+
+app.get('/', (req, res) => {
+    console.log('method:   GET')
+    console.log('route:    /')
+    res.sendFile(__dirname + '/public/index.html')
+})
+
 app.use(webpackDevMiddleware(compiler, {
         publicPath: config.output.publicPath,
     })
 )
-
 app.use(webpackHotMiddleware(compiler))
-
-// const watching = compiler.watch({}, () => console.log('watch'))
-
-// console.log('watching', watching)
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
+    console.log(`Waiting for Webpack to compile...`)
+    console.log('\n')
+    console.log('\n')
 })
-
-

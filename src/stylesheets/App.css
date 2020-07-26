@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+}
+
+.count, .title {
+    margin: 9pt;
+}
+
+.title {
+    font-size: 4rem;
+}
+
+.count {
+    font-size: 3rem;
+}
+
+.btn {
+    height: 50%;
+    align-self: center;
+    background-color: darkseagreen;
+    border: solid 1.1pt;
+    padding-left: 10pt;
+    padding-right: 10pt;
+    font-size: 2rem;
+}
+
